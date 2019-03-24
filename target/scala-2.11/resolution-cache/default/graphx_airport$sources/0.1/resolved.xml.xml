@@ -4,7 +4,7 @@
 		module="graphx_airport$sources"
 		revision="0.1"
 		status="integration"
-		publication="20190324203545"
+		publication="20190324220100"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

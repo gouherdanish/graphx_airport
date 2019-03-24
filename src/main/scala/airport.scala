@@ -106,6 +106,15 @@ object airport {
     plane_graph_fixed.edges.collect.take(5).foreach(println)
     plane_graph_fixed.triplets.collect.take(5).foreach(triplet=> println(triplet.srcAttr._1 +" -> "+triplet.dstAttr._1))
 
+    // Finding Busiest Airport
+    plane_graph_fixed.degrees
+      .toDF("Airport","Degree")
+      .join(plane_graph_fixed.vertices.toDF("Airport","Airport Name"),"Airport")
+      .orderBy(desc("Degree")).show(false)
   }
+  /*def get_airport_name_udf = (id:Long,vertice_map:HashMap[String,Long])=>{
+    vertice_map(id)
+  }
+  val get_airport_name_udf = udf()*/
 
 }
