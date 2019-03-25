@@ -115,7 +115,7 @@ object airport {
 
     val busy_airport_1 = plane_graph_fixed
       .outerJoinVertices(plane_graph_fixed.degrees)((vid,x,deg)=>(x,deg.getOrElse(0)))
-      .vertices.top(5)(Ordering.by(_._2))
+      .vertices.top(5)(Ordering.by(_._2._2))
     busy_airport_1.foreach(println)
   }
   /*def get_airport_name_udf = (id:Long,vertice_map:HashMap[String,Long])=>{
